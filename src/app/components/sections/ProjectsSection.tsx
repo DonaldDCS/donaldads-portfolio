@@ -1,7 +1,7 @@
 import React from "react";
 import ProjectCard from "../ui/ProjectCard";
 
-export default function Projects() {
+export default function ProjectsSection() {
     return (
         <section id="projects" className="py-16 text-center">
             <h2 className="text-2xl font-bold">Featured Projects</h2>

@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-export default function Contact() {
+export default function ContactSection() {
     return (
         <section className="py-16 text-center">
             <h2 className="text-2xl font-bold">Let&apos;s Connect</h2>
