@@ -6,7 +6,7 @@ export default function ContactSection() {
         <section className="py-16 text-center">
             <h2 className="text-2xl font-bold">Let&apos;s Connect</h2>
             <p className="mt-4">Interested in working together? Let&apos;s chat.</p>
-            <Link href="/contact" className="mt-4 inline-block text-violet-600">Contact Me</Link>
+            <Link href="/contact" className="mt-4 inline-block text-primary hover:text-accentSecondary">Contact Me</Link>
         </section>
     );
 };

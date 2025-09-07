@@ -37,7 +37,7 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-violet-900 text-white shadow-md">
+    <header className="bg-primary shadow-md">
       <div className="flex justify-between items-center px-8 py-4 relative">
         <Link href="/" className="text-2xl font-bold">
           Donald ADS
@@ -51,8 +51,8 @@ export default function Header() {
                 href={link.path}
                 className={`pb-1 transition ${
                   pathname === link.path
-                    ? "text-purple-500"
-                    : "hover:text-purple-500"
+                    ? "text-accentSecondary"
+                    : "hover:text-accentSecondary"
                 }`}
               >
                 {link.name}
@@ -60,7 +60,7 @@ export default function Header() {
               {pathname === link.path && (
                 <motion.div
                   layoutId="activeIndicator"
-                  className="absolute left-0 bottom-0 h-[2px] w-full bg-purple-500"
+                  className="absolute left-0 bottom-0 h-[2px] w-full bg-accentSecondary"
                   transition={{ type: "spring", stiffness: 500, damping: 30 }}
                 />
               )}
@@ -70,7 +70,7 @@ export default function Header() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden p-2 border border-purple-700 rounded"
+          className="md:hidden p-2 bg-accentSecondary rounded"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >
@@ -87,16 +87,17 @@ export default function Header() {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="flex flex-col overflow-hidden bg-violet-900 md:hidden px-8 py-4 space-y-4"
+            className="overflow-hidden bg-primary md:hidden"
           >
+            <div className="flex flex-col px-8 py-4 space-y-4">
             {links.map((link) => (
                 <motion.div key={link.path} variants={linkVariants}>
               <Link
                 href={link.path}
                 className={`block pb-1 transition ${
                   pathname === link.path
-                    ? "text-purple-500 font-semibold"
-                    : "hover:text-purple-500"
+                    ? "text-accentSecondary font-semibold"
+                    : "hover:text-accentSecondary"
                 }`}
                 onClick={() => setIsOpen(false)}
               >
@@ -104,6 +105,7 @@ export default function Header() {
               </Link>
               </motion.div>
             ))}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
