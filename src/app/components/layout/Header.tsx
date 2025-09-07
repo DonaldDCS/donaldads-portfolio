@@ -87,7 +87,7 @@ export default function Header() {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="flex flex-col overflow-hidden bg-purple-900 md:hidden px-8 py-4 space-y-4"
+            className="flex flex-col overflow-hidden bg-violet-900 md:hidden px-8 py-4 space-y-4"
           >
             {links.map((link) => (
                 <motion.div key={link.path} variants={linkVariants}>
