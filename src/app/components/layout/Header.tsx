@@ -37,19 +37,19 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-primary shadow-md">
+    <header className="bg-background shadow-md sticky top-0 z-50">
       <div className="flex justify-between items-center px-8 py-4 relative">
-        <Link href="/" className="text-2xl font-bold">
+        <Link href="/" className="text-xl font-heading font-bold">
           Donald ADS
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex space-x-8 relative">
+        <nav className="hidden md:flex space-x-6 font-body">
           {links.map((link) => (
             <div key={link.path} className="relative">
               <Link
                 href={link.path}
-                className={`pb-1 transition ${
+                className={`pb-1 transition-colors duration-300 ${
                   pathname === link.path
                     ? "text-accentSecondary"
                     : "hover:text-accentSecondary"
@@ -90,21 +90,21 @@ export default function Header() {
             className="overflow-hidden bg-primary md:hidden"
           >
             <div className="flex flex-col px-8 py-4 space-y-4">
-            {links.map((link) => (
+              {links.map((link) => (
                 <motion.div key={link.path} variants={linkVariants}>
-              <Link
-                href={link.path}
-                className={`block pb-1 transition ${
-                  pathname === link.path
-                    ? "text-accentSecondary font-semibold"
-                    : "hover:text-accentSecondary"
-                }`}
-                onClick={() => setIsOpen(false)}
-              >
-                {link.name}
-              </Link>
-              </motion.div>
-            ))}
+                  <Link
+                    href={link.path}
+                    className={`block pb-1 transition ${
+                      pathname === link.path
+                        ? "text-accentSecondary font-semibold"
+                        : "hover:text-accentSecondary"
+                    }`}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {link.name}
+                  </Link>
+                </motion.div>
+              ))}
             </div>
           </motion.div>
         )}

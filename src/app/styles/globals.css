@@ -1,55 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@600;700&display=swap');
 @import "tailwindcss";
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Poppins', sans-serif;
+}
 
 :root {
   --background: #F8F8F8;
   --foreground: #1C1C1C;
+
+  /* Primary Palette */
+  --color-primary: #634A84;
+  --color-primary-light: #7d63a0;
+  --color-primary-dark: #4a3567;
+
+  /* Accent Colors */
+  --color-accentPrimary: #0149B4;
+  --color-accentPrimary-light: #336bc7;
+  --color-accentSecondary: #B0356B;
+  --color-accentSecondary-light: #c85a85;
+
+  /* Neutrals */
+  --color-lightMode: #F8F8F8;
+  --color-darkMode: #1C1C1C;
+
+  /* Gradient Colors */
+  --color-gradient-start: #634A84;
+  --color-gradient-middle: #7d63a0;
+  --color-gradient-end: #4a3567;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 
-  --color-primary: #634A84;
-  --color-accentPrimary: #0149B4;
-  --color-accentSecondary: #B0356B;
-  --color-lightMode: #F8F8F8;
-  --color-darkMode: #1C1C1C;
+  --color-primary: var(--color-primary);
+  --color-primaryLight: var(--color-primary-light);
+  --color-primaryDark: var(--color-primary-dark);
 
-  --color-engvio-50: oklch(94.14% 0.01 305.57);
-  --color-engvio-100: oklch(88.19% 0.02 305.32);
-  --color-engvio-200: oklch(75.43% 0.043 304.17);
-  --color-engvio-300: oklch(63.55% 0.065 305.23);
-  --color-engvio-400: oklch(50.63% 0.074 305.31);
-  --color-engvio-500: oklch(38.57% 0.056 305.4);
-  --color-engvio-600: oklch(33.15% 0.049 305.95);
-  --color-engvio-700: oklch(28.77% 0.044 305.77);
-  --color-engvio-800: oklch(23.55% 0.034 305.52);
-  --color-engvio-900: oklch(19.18% 0.027 305.13);
-  --color-engvio-950: oklch(15.2% 0.022 306.88);
-  --color-abzero-50: oklch(94.03% 0.029 277.27);
-  --color-abzero-100: oklch(88.94% 0.054 277.24);
-  --color-abzero-200: oklch(77.92% 0.112 273.47);
-  --color-abzero-300: oklch(66.28% 0.178 267.81);
-  --color-abzero-400: oklch(55.42% 0.227 260.2);
-  --color-abzero-500: oklch(44.07% 0.181 260.25);
-  --color-abzero-600: oklch(37.84% 0.155 260.24);
-  --color-abzero-700: oklch(31.73% 0.129 259.97);
-  --color-abzero-800: oklch(26.41% 0.108 260.05);
-  --color-abzero-900: oklch(20.23% 0.083 260.01);
-  --color-abzero-950: oklch(15.16% 0.062 260.07);
-  --color-maroon-50: oklch(95.19% 0.02 357.72);
-  --color-maroon-100: oklch(91.05% 0.036 358.44);
-  --color-maroon-200: oklch(81.28% 0.086 357.5);
-  --color-maroon-300: oklch(72.4% 0.139 357.63);
-  --color-maroon-400: oklch(63% 0.198 357.82);
-  --color-maroon-500: oklch(52.62% 0.166 357.58);
-  --color-maroon-600: oklch(44.93% 0.141 357.8);
-  --color-maroon-700: oklch(37.83% 0.12 357.66);
-  --color-maroon-800: oklch(29.73% 0.093 357.89);
-  --color-maroon-900: oklch(22.55% 0.071 357.48);
-  --color-maroon-950: oklch(17.2% 0.055 357.3);
+  --color-accentPrimary: var(--color-accentPrimary);
+  --color-accentSecondary: var(--color-accentSecondary);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -59,8 +66,30 @@
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Animated gradient keyframes */
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
+
+.animate-gradient {
+  background: linear-gradient(
+    270deg,
+    var(--color-gradient-start),
+    var(--color-gradient-middle),
+    var(--color-gradient-end)
+  );
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+/* Fonts */
+.font-heading { font-family: 'Poppins', sans-serif; }
+.font-body { font-family: 'Inter', sans-serif; }
+
+/* Hover Utilities */
+.hover-primary:hover { color: var(--color-primary-light); }
+.hover-accent:hover { color: var(--color-accentPrimary); }
+.hover-scale:hover { transform: scale(1.2); }
+
