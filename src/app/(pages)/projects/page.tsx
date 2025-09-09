@@ -1,7 +1,9 @@
+import ProjectsSection from "@/app/components/sections/ProjectsSection";
+
 export default function Projeccts() {
   return (
     <>
-      <h1>Projects Page</h1>
+      <ProjectsSection />
     </>
   );
 }

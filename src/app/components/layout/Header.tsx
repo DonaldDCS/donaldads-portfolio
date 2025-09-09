@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import ThemeToggle from "../ui/ThemeToggle";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,9 +40,12 @@ export default function Header() {
   return (
     <header className="bg-background shadow-md sticky top-0 z-50">
       <div className="flex justify-between items-center px-8 py-4 relative">
-        <Link href="/" className="text-xl font-heading font-bold">
-          Donald ADS
-        </Link>
+        <div className="flex gap-4 items-center">
+          <ThemeToggle />
+          <Link href="/" className="text-xl font-heading font-bold">
+            Donald ADS
+          </Link>
+        </div>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex space-x-6 font-body">

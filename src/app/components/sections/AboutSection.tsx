@@ -32,7 +32,7 @@ export default function AboutSection({
   imageSrc,
 }: AboutSectionProps) {
   return (
-    <section className="py-16 px-8 text-foreground">
+    <section className="py-16 px-8 bg-background text-foreground">
       <motion.div
         className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
         variants={containerVariants}
@@ -49,7 +49,7 @@ export default function AboutSection({
               href="https://github.com/donalddcs"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover-scale hover-primary transition transform duration-300"
+              className="hover-scale hover-primary transition-transform duration-300"
             >
               <SiGithub size={28} />
             </a>
@@ -57,13 +57,13 @@ export default function AboutSection({
               href="https://linkedin.com/in/dadstooks"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover-scale hover-primary transition transform duration-300"
+              className="hover-scale hover-primary transition-transform duration-300"
             >
               <SiLinkedin size={28} />
             </a>
             <a
               href="mailto:donald.stooks@gmail.com"
-              className="hover-scale hover-primary transition transform duration-300"
+              className="hover-scale hover-primary transition-transform duration-300"
             >
               <Mail size={28} />
             </a>
@@ -80,7 +80,7 @@ export default function AboutSection({
               alt="About me image"
               width={300}
               height={300}
-              className="rounded-full border-4 border-primary shadow-lg hover:scale-110 transition transform duration-300"
+              className="rounded-full border-4 border-primary shadow-lg hover:scale-110 transition-transform duration-300"
             />
           </motion.div>
       </motion.div>
