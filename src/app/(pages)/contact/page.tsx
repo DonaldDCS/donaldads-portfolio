@@ -10,13 +10,13 @@ export default function Contact() {
   return (
     <section className="flex flex-col items-center py-16 px-4">
       <Animated as="h1" className="text-4xl font-bold text-primary mb-6">
-        Let's Connect
+        Let&apos;s Connect
       </Animated>
       <Animated
         as="p"
         className="text-lg text-center max-w-2xl mb-12 text-foreground"
       >
-        I’m always open to new opportunities, collaborations, or just a friendly
+        I&apos;m always open to new opportunities, collaborations, or just a friendly
         chat. Feel free to reach out through any of the channels below.
       </Animated>
       <Animated
