@@ -39,20 +39,30 @@ export default function Hero() {
           className="flex flex-col sm:flex-row justify-center gap-4"
           variants={itemVariants}
         >
-          <Link
-            href="/projects"
-            className="px-4 py-2 font-body bg-accentSecondary text-white shadow-lg rounded-md transition-transform duration-300 hover:scale-105"
+          <motion.a
+            href="#projects"
+            whileHover={{
+              scale: 1.05,
+              boxShadow: "0px 0px 12px rgba(99, 74, 132, 0.4)",
+            }}
+            whileTap={{ scale: 0.95 }}
+            className="px-4 py-2 font-body border-2 border-accentSecondary bg-accentSecondary text-white shadow-lg rounded-md scroll-smooth"
           >
             View Projects
-          </Link>
-          <Link
+          </motion.a>
+          <motion.a
             href="/contact"
-            className="px-4 py-2 font-body border-2 border-white text-white shadow-lg rounded-md transition-transform duration-300 hover:scale-105"
+            whileHover={{
+              scale: 1.05,
+              boxShadow: "0px 0px 12px rgba(99, 74, 132, 0.4)",
+            }}
+            whileTap={{ scale: 0.95 }}
+            className="px-4 py-2 font-body border-2 border-white text-white shadow-lg rounded-md"
           >
             Contact Me
-          </Link>
+          </motion.a>
         </motion.div>
       </motion.div>
     </section>
   );
-}
+};

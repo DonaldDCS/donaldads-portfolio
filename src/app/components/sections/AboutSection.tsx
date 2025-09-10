@@ -70,19 +70,18 @@ export default function AboutSection({
           </motion.div>
         </motion.div>
 
-        
-          <motion.div
-            className="flex justify-center md:justify-end"
-            variants={itemVariants}
-          >
-            <Image
-              src="/images/DS_CV.jpg"
-              alt="About me image"
-              width={300}
-              height={300}
-              className="rounded-full border-4 border-primary shadow-lg hover:scale-110 transition-transform duration-300"
-            />
-          </motion.div>
+        <motion.div
+          className="flex justify-center md:justify-end"
+          variants={itemVariants}
+        >
+          <Image
+            src="/images/DS_CV.jpg"
+            alt="About me image"
+            width={300}
+            height={300}
+            className="rounded-full border-4 border-primary shadow-lg hover:scale-110 transition-transform duration-300"
+          />
+        </motion.div>
       </motion.div>
     </section>
   );
