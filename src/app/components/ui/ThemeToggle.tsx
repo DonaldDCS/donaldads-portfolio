@@ -5,12 +5,14 @@ import { useEffect, useState } from "react";
 import { Sun, Moon } from "lucide-react";
 
 export default function ThemeToggle() {
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme, systemTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  const isDark = theme === "dark";
 
   useEffect(() => setMounted(true), []);
   if (!mounted) return null;
+
+  const currentTheme = theme === "system" ? systemTheme : theme;
+  const isDark = currentTheme === "dark";
 
   return (
     <button
@@ -21,7 +23,7 @@ export default function ThemeToggle() {
       aria-label="Toggle dark mode"
     >
       <span
-        className={`absolute top-1 left-1 w-6 h-6 rounded-full bg-white shadow-md transform transition-transform duration-500 ease-in-out ${
+        className={`absolute top-1 left-1 w-6 h-6 rounded-full bg-white shadow-md transform transition-transform duration-400 ease-in-out ${
           isDark ? "translate-x-6" : "translate-x-0"
         }`}
       />

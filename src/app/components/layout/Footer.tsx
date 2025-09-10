@@ -18,7 +18,7 @@ const itemVariants = {
 export default function Footer() {
   return (
     <motion.footer
-      className="py-8 px-6 text-[var(--foreground)] animate-gradient"
+      className="py-8 px-6 text-white animate-gradient"
       variants={containerVariants}
       initial="hidden"
       whileInView="show"
@@ -26,7 +26,7 @@ export default function Footer() {
     >
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
         <motion.div variants={itemVariants} className="mb-4 md:mb-0">
-          <p>© 2025 Donald AD Stooks. All rights reserved.</p>
+          <p className="text-center md:text-left">© 2025 Donald AD Stooks. All rights reserved.</p>
         </motion.div>
 
         <motion.div variants={itemVariants} className="flex space-x-6">

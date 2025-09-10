@@ -74,7 +74,7 @@ export default function Header() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden p-2 bg-accentSecondary rounded"
+          className="md:hidden p-2 bg-accentSecondary rounded text-white"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >
@@ -91,7 +91,7 @@ export default function Header() {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="overflow-hidden bg-primary md:hidden"
+            className="overflow-hidden bg-background transition-colors duration-400"
           >
             <div className="flex flex-col px-8 py-4 space-y-4">
               {links.map((link) => (

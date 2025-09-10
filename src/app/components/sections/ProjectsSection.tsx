@@ -73,7 +73,10 @@ export default function ProjectsSection() {
         variants={containerVariants}
         >
             {projects.map((project, index) => (
-                <motion.div key={index} variants={itemVariants}>
+                <motion.div 
+                className="flex"
+                key={index}
+                variants={itemVariants}>
                     <ProjectCard {...project} />
                 </motion.div>
             ))}

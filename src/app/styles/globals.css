@@ -19,8 +19,8 @@ h1, h2, h3, h4 {
   font-family: 'Poppins', sans-serif;
 }
 
-html, body, main, section {
-  transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+html, body, main, section, header {
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
 }
 
 :root {
@@ -43,6 +43,7 @@ html, body, main, section {
   --color-darkMode: #1C1C1C;
 
   --color-card: #F8F8F8;
+  --color-lightText: #F8F8F8;
 
   /* Gradient Colors */
   --color-gradient-start: #634A84;
