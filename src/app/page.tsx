@@ -3,19 +3,29 @@ import Hero from "./components/sections/Hero";
 import AboutSection from "./components/sections/AboutSection";
 import ProjectsSection from "./components/sections/ProjectsSection";
 import ContactSection from "./components/sections/ContactSection";
+import Animated from "./components/ui/Animated";
 
 export default function Home() {
   return (
     <>
       <Hero />
       <AboutSection />
-      <ProjectsSection
-        title="Featured Projects"
-        description="A selection of my work showcasing modern web development with React
-          and Next.js"
-        limit={2}
-        showAllButton
-      />
+      <div className="max-w-6xl mx-auto text-center py-14 px-6 md:px-12 lg:px-24 bg-gradient-to-r from-accentPrimary/70 via-primary/70 to-accentSecondary/70">
+        <Animated
+          as="h1"
+          className="text-4xl font-heading font-bold mb-8 text-primary"
+        >
+          Featured Projects
+        </Animated>
+        <Animated
+          as="p"
+          className="text-lg md:text-xl font-body text-foreground"
+        >
+          A selection of my work showcasing modern web development with React
+          and Next.js
+        </Animated>
+      </div>
+      <ProjectsSection limit={2} showAllButton />
       <ContactSection />
     </>
   );

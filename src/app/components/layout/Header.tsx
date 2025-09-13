@@ -43,7 +43,7 @@ export default function Header() {
         <div className="flex gap-4 items-center">
           <ThemeToggle />
           <Link href="/" className="text-xl font-heading font-bold">
-            Donald ADS
+            Donald Stooks
           </Link>
         </div>
 

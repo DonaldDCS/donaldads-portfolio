@@ -15,6 +15,7 @@ export default function ThemeToggle() {
   const isDark = currentTheme === "dark";
 
   return (
+    <>
     <button
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
       className={`relative flex items-center w-14 h-8 rounded-full transition-colors duration-500 ${
@@ -34,5 +35,6 @@ export default function ThemeToggle() {
         <Moon size={16} />
       </span>
     </button>
+    </>
   );
 }

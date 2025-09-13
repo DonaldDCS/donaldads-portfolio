@@ -53,6 +53,19 @@ html, body, main, section, header, a {
   --color-gradient-start: #634A84;
   --color-gradient-middle: #7d63a0;
   --color-gradient-end: #4a3567;
+
+
+  --color-success: #3BA55D;
+  --color-success-hover: #2C8B4B;
+
+  --color-warning: #E6A23C;
+  --color-warning-hover: #C88221;
+
+  --color-error: #BD4747;
+  --color-error-hover: #B04141;
+
+  --color-info: #3A86FF;
+  --color-info-hover: #2F6ED6;
 }
 
 .dark {
@@ -74,6 +87,20 @@ html, body, main, section, header, a {
 
   --color-accentPrimary: var(--color-accentPrimary);
   --color-accentSecondary: var(--color-accentSecondary);
+
+  --color-success: var(--color-success);
+  --color-success-hover: var(--color-success-hover);
+
+  --color-warning: var(--color-warning);
+  --color-warning-hover: var(--color-warning-hover);
+
+  --color-error: var(--color-error);
+  --color-error-hover: var(--color-error-hover);
+
+  --color-error-a: var(--color-error-a);
+
+  --color-info: var(--color-info);
+  --color-info-hover: var(--color-info-hover);
 }
 
 /*@media (prefers-color-scheme: dark) {

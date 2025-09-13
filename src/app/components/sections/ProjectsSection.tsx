@@ -3,14 +3,12 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Animated from "../../components/ui/Animated";
-import { staggerFadeInUp } from "../../lib/motionVariants";
+import { fadeInUp, staggerFadeInUp } from "../../lib/motionVariants";
 import { projects } from "../../data/projects";
 import ProjectCard from "../ui/ProjectCard";
 import MotionLink from "../ui/MotionLink";
 
 interface ProjectsSectionProps {
-  title: string;
-  description?: string;
   limit?: number;
   canFilter?: boolean;
   showAllButton?: boolean;
@@ -18,8 +16,6 @@ interface ProjectsSectionProps {
 }
 
 export default function ProjectsSection({
-  title,
-  description,
   limit,
   canFilter,
   showAllButton,
@@ -37,45 +33,12 @@ export default function ProjectsSection({
     ? filteredProjects.slice(0, limit)
     : filteredProjects;
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: { staggerChildren: 0.2 },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-  };
-
   return (
     <section
       id="projects"
-      className="py-20 px-6 md:px-12 lg:px-24 bg-gradient-to-r from-accentPrimary/70 via-primary/70 to-accentSecondary/70"
+      className="pb-14 px-6 md:px-12 lg:px-24 bg-gradient-to-r from-accentPrimary/70 via-primary/70 to-accentSecondary/70"
     >
-      <Animated
-        as="div"
-        variants={staggerFadeInUp.container}
-        className="max-w-6xl mx-auto text-center"
-        viewport={{ once: true, amount: 0.2 }}
-      >
-        <Animated
-          as="h2"
-          variants={staggerFadeInUp.child}
-          className="text-3xl md:text-4xl font-heading font-bold mb-8 text-primary"
-        >
-          {title}
-        </Animated>
-        <Animated
-          as="p"
-          className="text-lg md:text-xl font-body text-foreground mb-12"
-          variants={staggerFadeInUp.child}
-        >
-          {description}
-        </Animated>
-
+      <div className="max-w-6xl mx-auto text-center">
         {/* Tag filters */}
         {canFilter && (
           <div className="flex flex-wrap justify-center gap-3 mb-12">
@@ -84,7 +47,7 @@ export default function ProjectsSection({
               className={`w-20 px-4 py-2 rounded-full text-sm font-medium transition ${
                 activeTag === null
                   ? "bg-primary text-white"
-                  : "bg-gray-200 dark:bg-gray-700 text-foreground"
+                  : "bg-error-hover text-white"
               }`}
             >
               {activeTag === null ? "All" : "Clear"}
@@ -96,7 +59,7 @@ export default function ProjectsSection({
                 className={`px-4 py-2 rounded-full text-sm font-medium transition ${
                   activeTag === tag
                     ? "bg-primary text-white"
-                    : "bg-gray-200 dark:bg-gray-700 text-foreground"
+                    : "bg-card text-foreground"
                 }`}
               >
                 {tag}
@@ -125,12 +88,11 @@ export default function ProjectsSection({
             ))}
           </AnimatePresence>
         </Animated>
-      </Animated>
+      </div>
       {showAllButton && (
         <Animated
           className="mt-12 text-center"
           variants={staggerFadeInUp.child}
-          viewport={{ once: true }}
         >
           <MotionLink
             href={buttonHref}

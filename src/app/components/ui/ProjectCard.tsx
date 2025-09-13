@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { motion } from "framer-motion";
+import MotionLink from "./MotionLink";
 
 interface ProjectCardProps {
   title: string;
@@ -41,17 +40,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             </span>
           ))}
         </div>
-        <motion.a
+        <MotionLink
           href={link}
-          whileHover={{
-            scale: 1.05,
-            boxShadow: "0px 0px 12px rgba(99, 74, 132, 0.4)",
-          }}
-          whileTap={{ scale: 0.95 }}
-          className="mt-6 inline-block px-4 py-2 rounded-md bg-accentSecondary text-white font-bobdy text-sm font-medium hover:bg-accentPrimary w-3/4"
+          className="mt-6 inline-block px-4 py-2 rounded-md bg-accentSecondary text-white font-bobdy text-sm font-medium hover:bg-accentPrimary w-3/4 text-center"
         >
           Learn More
-        </motion.a>
+        </MotionLink>
     </div>
   );
 };

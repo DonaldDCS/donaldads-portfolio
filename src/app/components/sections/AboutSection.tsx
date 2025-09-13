@@ -1,9 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { Mail } from "lucide-react";
 import { SiGithub, SiLinkedin } from "react-icons/si";
+import { staggerFadeInUp } from "@/app/lib/motionVariants";
+import Animated from "../ui/Animated";
 
 interface AboutSectionProps {
   heading?: string;
@@ -11,40 +12,22 @@ interface AboutSectionProps {
   imageSrc?: string;
 }
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.3,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-};
-
 export default function AboutSection({
   heading = "About Me",
-  text = "I'm Donald ADS, a front-end developer in the making who is passionate about creating beautiful, modular, and functional web applications. I love combining design and technology to build experiences that users enjoy. My goal is to develop solutions that are both scalable and maintainable.",
+  text = "I'm Donald Stooks, a front-end developer in the making who is passionate about creating beautiful, modular, and functional web applications. I love combining design and technology to build experiences that users enjoy. My goal is to develop solutions that are both scalable and maintainable.",
   imageSrc,
 }: AboutSectionProps) {
   return (
-    <section className="py-16 px-8 bg-background text-foreground">
-      <motion.div
+    <section className="py-16 px-8 bg-background text-foreground max-w-6xl mx-auto">
+      <Animated
+        variants={staggerFadeInUp.container}
         className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
       >
-        <motion.div className="flex-1 space-y-4" variants={itemVariants}>
+        <Animated variants={staggerFadeInUp.child} className="flex-1 space-y-4">
           <h2 className="text-4xl font-bold mb-4">{heading}</h2>
           <p className="leading-relaxed text-lg mb-6">{text}</p>
 
-          <motion.div className="flex space-x-6" variants={itemVariants}>
+          <Animated className="flex space-x-6" variants={staggerFadeInUp.child}>
             <a
               href="https://github.com/donalddcs"
               target="_blank"
@@ -67,12 +50,12 @@ export default function AboutSection({
             >
               <Mail size={28} />
             </a>
-          </motion.div>
-        </motion.div>
+          </Animated>
+        </Animated>
 
-        <motion.div
+        <Animated
           className="flex justify-center md:justify-end"
-          variants={itemVariants}
+          variants={staggerFadeInUp.child}
         >
           <Image
             src="/images/DS_CV.jpg"
@@ -81,8 +64,8 @@ export default function AboutSection({
             height={300}
             className="rounded-full border-4 border-primary shadow-lg hover:scale-110 transition-transform duration-300"
           />
-        </motion.div>
-      </motion.div>
+        </Animated>
+      </Animated>
     </section>
   );
 }

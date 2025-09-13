@@ -6,10 +6,9 @@ import { fadeInUp } from "../../lib/motionVariants";
 
 type AnimatedProps<T extends keyof JSX.IntrinsicElements> = {
   as?: T;
-  children: React.ReactNode;
+  children?: React.ReactNode;
   delay?: number;
   variants?: Variants;
-  stagger?: boolean;
   className?: string;
   href?: string;
 } & React.ComponentPropsWithoutRef<T> & MotionProps;
@@ -21,9 +20,9 @@ export default function Animated<
   children,
   delay = 0,
   variants = fadeInUp,
-  stagger = false,
   className,
   href,
+  ...rest
 }: AnimatedProps<T>) {
   const Component = as || "div";
   const MotionComponent = motion(Component as React.ElementType);
@@ -31,13 +30,13 @@ export default function Animated<
   return (
     <MotionComponent
       variants={variants}
-      stagger={stagger}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay }}
       className={className}
       href={href}
+      {...rest}
     >
       {children}
     </MotionComponent>
