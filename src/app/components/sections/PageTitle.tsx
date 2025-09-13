@@ -10,7 +10,7 @@ interface PageTitleProps {
 
 export default function PageTitle({ title, description, bgClass }: PageTitleProps) {
   return (
-    <header className={`max-w-6xl mx-auto text-center py-14 px-6 md:px-12 lg:px-24 ${bgClass}`}>
+    <header className={`text-center py-14 px-6 md:px-12 lg:px-24 ${bgClass}`}>
       <Animated
         as="h1"
         className="text-4xl font-heading font-bold mb-8 text-primary"
@@ -20,7 +20,7 @@ export default function PageTitle({ title, description, bgClass }: PageTitleProp
       {description && (
         <Animated
           as="p"
-          className="text-lg md:text-xl font-body text-foreground"
+          className="max-w-2/3 mx-auto text-lg md:text-xl font-body text-foreground"
         >
           {description}
         </Animated>

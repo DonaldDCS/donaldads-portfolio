@@ -39,13 +39,12 @@ export default function Header() {
 
   return (
     <header className="bg-background shadow-md sticky top-0 z-50">
-      <div className="flex justify-between items-center px-8 py-4 relative">
-        <div className="flex gap-4 items-center">
+      <div className="items-center px-4 md:px-8 py-4 relative grid grid-cols-[min-content_1fr_min-content] justify-items-center sm:justify-items-start gap-8">
+        
           <ThemeToggle />
           <Link href="/" className="text-xl font-heading font-bold">
             Donald Stooks
           </Link>
-        </div>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex space-x-6 font-body">
@@ -74,7 +73,7 @@ export default function Header() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden p-2 bg-accentSecondary rounded text-white"
+          className="md:hidden p-2 bg-accentSecondary rounded text-white w-10 h-10"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >

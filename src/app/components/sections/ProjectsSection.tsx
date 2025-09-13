@@ -41,7 +41,8 @@ export default function ProjectsSection({
       <div className="max-w-6xl mx-auto text-center">
         {/* Tag filters */}
         {canFilter && (
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
+          <div        
+          className="flex flex-wrap justify-center gap-3 mb-12">
             <button
               onClick={() => setActiveTag(null)}
               className={`w-20 px-4 py-2 rounded-full text-sm font-medium transition ${
@@ -71,7 +72,7 @@ export default function ProjectsSection({
         <Animated
           as="div"
           variants={staggerFadeInUp.container}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+          className={`grid ${ limit ? "grid-cols-" + limit : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"} gap-8`}
         >
           <AnimatePresence mode="popLayout">
             {visibleProjects.map((project, index) => (

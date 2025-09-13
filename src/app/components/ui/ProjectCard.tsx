@@ -8,13 +8,13 @@ interface ProjectCardProps {
   tags: string[];
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({
+export default function ProjectCard({
   title,
   description,
   link,
   image,
   tags,
-}) => {
+}: ProjectCardProps) {
   return (
     <div className="bg-card rounded-xl shadow-lg overflow:hidden hover:shadow-xl transition-shadow duration-300 flex flex-col h-full p-4 items-center">
       <div className="w-full relative overflow-hidden rounded-md">
@@ -49,5 +49,3 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     </div>
   );
 };
-
-export default ProjectCard;

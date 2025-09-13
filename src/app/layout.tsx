@@ -20,7 +20,7 @@ export default function RootLayout({
       <body className="antialiased">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Header />
-          <main>{children}</main>
+          <main className="flex flex-col">{children}</main>
           <Footer />
         </ThemeProvider>
       </body>

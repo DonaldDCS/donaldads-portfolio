@@ -15,7 +15,7 @@ export default function Hero() {
           variants={staggerFadeInUp.child}
           className="text-4xl md:text-5xl font-heading font-bold mb-4 text-white"
         >
-          Hi, I&apos;m Donald Stooks
+          Hei! I&apos;m Donald Stooks
         </Animated>
 
         <Animated
@@ -31,7 +31,7 @@ export default function Hero() {
         >
           <Animated
             as="a"
-            href="#projects"
+            href="#projectSection"
             {...linkMotion}
             className="px-4 py-2 font-body border-2 border-accentSecondary bg-accentSecondary text-white shadow-lg rounded-md scroll-smooth"
           >
