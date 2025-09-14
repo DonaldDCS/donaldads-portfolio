@@ -50,8 +50,8 @@ html, body, main, section, header, a {
   --color-lightText: #F8F8F8;
 
   /* Gradient Colors */
-  --color-gradient-start: #634A84;
-  --color-gradient-middle: #7d63a0;
+  --color-gradient-start: #7d63a0;
+  --color-gradient-middle: #634A84;
   --color-gradient-end: #4a3567;
 
 
@@ -121,10 +121,12 @@ html, body, main, section, header, a {
   background: linear-gradient(
     270deg,
     var(--color-gradient-start),
+    #70528f 20%,
     var(--color-gradient-middle),
+    #5c4178 80%,
     var(--color-gradient-end)
   );
-  background-size: 400% 400%;
+  background-size: 600% 600%;
   animation: gradient 15s ease infinite;
 }
 
