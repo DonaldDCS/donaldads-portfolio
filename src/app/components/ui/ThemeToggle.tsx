@@ -11,9 +11,6 @@ export default function ThemeToggle() {
   const [rotated, setRotated] = useState(false);
   const [initialTheme, setInitialTheme] = useState<string | null>(null);
 
-  /*useEffect(() => setMounted(true), []);
-  if (!mounted) return null;*/
-
   useEffect(() => {
     setMounted(true);
   }, []);

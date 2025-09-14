@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import ThemeToggle from "../ui/ThemeToggle";
+import ThemeToggle from "@components/ui/ThemeToggle";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);

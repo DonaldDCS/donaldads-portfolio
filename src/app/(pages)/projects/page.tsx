@@ -1,6 +1,5 @@
-import ProjectsSection from "@/app/components/sections/ProjectsSection";
-import HeaderSection from "@/app/components/sections/PageTitle";
-import PageTitle from "@/app/components/sections/PageTitle";
+import ProjectsSection from "@components/sections/ProjectsSection";
+import PageTitle from "@components/sections/PageTitle";
 
 export default function Projeccts() {
   return (

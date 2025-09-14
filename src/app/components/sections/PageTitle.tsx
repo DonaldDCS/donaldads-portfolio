@@ -1,6 +1,6 @@
 "use client";
 
-import Animated from "../ui/Animated";
+import Animated from "@components/ui/Animated";
 
 interface PageTitleProps {
   title: string;

@@ -3,8 +3,8 @@
 import Image from "next/image";
 import { Mail } from "lucide-react";
 import { SiGithub, SiLinkedin } from "react-icons/si";
-import { staggerFadeInUp } from "@/app/lib/motionVariants";
-import Animated from "../ui/Animated";
+import { staggerFadeInUp } from "@lib/motionVariants";
+import Animated from "@components/ui/Animated";
 
 interface AboutSectionProps {
   heading?: string;

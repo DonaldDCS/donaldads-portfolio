@@ -2,11 +2,11 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Animated from "../../components/ui/Animated";
-import { fadeInUp, staggerFadeInUp } from "../../lib/motionVariants";
-import { projects } from "../../data/projects";
-import ProjectCard from "../ui/ProjectCard";
-import MotionLink from "../ui/MotionLink";
+import Animated from "@components/ui/Animated";
+import { staggerFadeInUp } from "@lib/motionVariants";
+import { projects } from "@data/projects";
+import ProjectCard from "@components/ui/ProjectCard";
+import MotionLink from "@components/ui/MotionLink";
 
 interface ProjectsSectionProps {
   limit?: number;

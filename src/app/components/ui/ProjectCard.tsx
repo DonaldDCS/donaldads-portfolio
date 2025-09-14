@@ -16,7 +16,7 @@ export default function ProjectCard({
   tags,
 }: ProjectCardProps) {
   return (
-    <div className="bg-card rounded-xl shadow-lg overflow:hidden hover:shadow-xl transition-shadow duration-300 flex flex-col h-full p-4 items-center">
+    <div className="bg-card rounded-xl shadow-lg overflow:hidden hover:shadow-xl transition-shadow duration-300 flex flex-col h-full p-4 pb-6 items-center">
       <div className="w-full relative overflow-hidden rounded-md">
         <img
           src={image}

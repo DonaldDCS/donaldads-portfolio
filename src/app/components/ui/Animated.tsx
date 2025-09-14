@@ -2,7 +2,7 @@
 
 import { motion, MotionProps, Variants } from "framer-motion";
 import React, { JSX } from "react";
-import { fadeInUp } from "../../lib/motionVariants";
+import { fadeInUp } from "@lib/motionVariants";
 
 type AnimatedProps<T extends keyof JSX.IntrinsicElements> = {
   as?: T;

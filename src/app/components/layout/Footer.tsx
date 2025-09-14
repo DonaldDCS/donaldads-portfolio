@@ -2,8 +2,8 @@
 
 import { Mail } from "lucide-react";
 import { SiGithub, SiLinkedin } from "react-icons/si";
-import Animated from "../ui/Animated";
-import { staggerFadeInUp } from "@/app/lib/motionVariants";
+import Animated from "@components/ui/Animated";
+import { staggerFadeInUp } from "@lib/motionVariants";
 
 export default function Footer() {
   return (

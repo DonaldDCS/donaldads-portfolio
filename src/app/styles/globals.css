@@ -103,13 +103,6 @@ html, body, main, section, header, a {
   --color-info-hover: var(--color-info-hover);
 }
 
-/*@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #1C1C1C;
-    --foreground: #F8F8F8;
-  }
-}*/
-
 /* Animated gradient keyframes */
 @keyframes gradient {
   0% { background-position: 0% 50%; }

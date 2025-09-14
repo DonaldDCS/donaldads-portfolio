@@ -1,8 +1,8 @@
 "use client";
 
-import PageTitle from "@/app/components/sections/PageTitle";
-import Animated from "@/app/components/ui/Animated";
-import { linkMotion, staggerFadeInUp } from "../../lib/motionVariants";
+import PageTitle from "@components/sections/PageTitle";
+import Animated from "@components/ui/Animated";
+import { linkMotion, staggerFadeInUp } from "@lib/motionVariants";
 import { Mail } from "lucide-react";
 import { SiGithub, SiLinkedin } from "react-icons/si";
 
@@ -15,7 +15,7 @@ export default function Contact() {
           friendly chat. Feel free to reach out through any of the channels
           below."
       />
-      <section className="flex flex-col items-center px-4 max-w-6xl mx-auto text-center">
+      <section className="flex flex-col items-center pb-14 px-6 text-center">
         <Animated
           as="div"
           variants={staggerFadeInUp.container}

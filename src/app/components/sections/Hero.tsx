@@ -1,7 +1,7 @@
 "use client";
 
-import { linkMotion, staggerFadeInUp } from "@/app/lib/motionVariants";
-import Animated from "../ui/Animated";
+import { linkMotion, staggerFadeInUp } from "@lib/motionVariants";
+import Animated from "@components/ui/Animated";
 
 export default function Hero() {
   return (
