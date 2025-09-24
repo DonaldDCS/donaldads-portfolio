@@ -3,12 +3,6 @@
 
 html {
   scroll-behavior: smooth!important;
-  opacity: 0;
-  transition: opacity 0.8s ease;
-}
-
-html.js-loaded {
-  opacity: 1;
 }
 
 body {
