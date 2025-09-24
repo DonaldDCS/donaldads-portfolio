@@ -6,15 +6,17 @@ export default function GradientHero() {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    // Initial canvas size
-    let width = (canvas.width = window.innerWidth);
-    let height = (canvas.height = window.innerHeight);
+    // ---- DevicePixelRatio scaling (sharper gradients, less banding)
+    const dpr = Math.max(1, window.devicePixelRatio || 1);
+    let width = (canvas.width = Math.round(window.innerWidth * dpr));
+    let height = (canvas.height = Math.round(window.innerHeight * dpr));
+    canvas.style.width = `${window.innerWidth}px`;
+    canvas.style.height = `${window.innerHeight}px`;
+    ctx.scale(dpr, dpr);
 
-    // Colors pulled from your CSS variables
     const startColor = getComputedStyle(document.documentElement)
       .getPropertyValue("--color-gradient-start")
       .trim();
@@ -27,11 +29,16 @@ export default function GradientHero() {
 
     let tick = 0;
 
+    const prefersReduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    const speedDivisor = prefersReduced ? 2000 : 500;
+
     const draw = () => {
       ctx.clearRect(0, 0, width, height);
 
-      // Animate the angle slowly
-      const angle = Math.sin(tick / 400) * (Math.PI / 3); // oscillates between -π and π
+      // ---- Gradient angle drift
+      const angle = Math.sin(tick / speedDivisor) * (Math.PI / 3); // subtle swing
       const x = Math.cos(angle) * width;
       const y = Math.sin(angle) * height;
 
@@ -41,31 +48,33 @@ export default function GradientHero() {
       gradient.addColorStop(1, endColor);
 
       ctx.fillStyle = gradient;
-      ctx.fillRect(0, 0, width, height);
+      ctx.fillRect(0, 0, width / dpr, height / dpr);
 
-      tick += 1; // speed of drift
+      tick += 1;
       requestAnimationFrame(draw);
     };
 
     draw();
 
-    // Handle resize
+    // ---- Handle resize
     const handleResize = () => {
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
+      width = canvas.width = Math.round(window.innerWidth * dpr);
+      height = canvas.height = Math.round(window.innerHeight * dpr);
+      canvas.style.width = `${window.innerWidth}px`;
+      canvas.style.height = `${window.innerHeight}px`;
+      ctx.setTransform(1, 0, 0, 1, 0, 0); // reset scaling
+      ctx.scale(dpr, dpr);
     };
     window.addEventListener("resize", handleResize);
 
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
     <canvas
       ref={canvasRef}
       className="absolute inset-0 w-full h-full"
-      style={{ zIndex: -1 }} // keep it behind hero content
+      style={{ zIndex: -1 }}
     />
   );
 }
