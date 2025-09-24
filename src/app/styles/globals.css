@@ -105,22 +105,20 @@ html, body, main, section, header, a {
 
 /* Animated gradient keyframes */
 @keyframes gradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
 }
 
 .animate-gradient {
   background: linear-gradient(
     270deg,
     var(--color-gradient-start),
-    #70528f 20%,
     var(--color-gradient-middle),
-    #5c4178 80%,
     var(--color-gradient-end)
   );
   background-size: 600% 600%;
-  animation: gradient 15s ease infinite;
+  animation: gradient 30s ease-in-out infinite;
 }
 
 /* Fonts */
@@ -132,3 +130,15 @@ html, body, main, section, header, a {
 .hover-accent:hover { color: var(--color-accentPrimary); }
 .hover-accentSecondary:hover { color: var(--color-accentSecondary); }
 .hover-scale:hover { transform: scale(1.2); }
+
+@layer utilities {
+  .bg-oklch-primarytoaccent {
+    background: linear-gradient(to right, var(--color-primaryDark) 25%, var(--color-accentPrimary) 100%);
+    background: linear-gradient(to right in oklch, theme(--color-primaryDark) 25%, theme(--color-accentPrimary) 100%);
+  }
+
+  .bg-oklch-hero {
+    background: linear-gradient(to right, var(--color-gradient-start) 0%, var(--color-gradient-middle) 50%, var(--color-gradient-end) 100%);
+    background: linear-gradient(to right in oklch, theme(--color-primaryLight) 0%, theme(--color-primary) 50%, theme(--color-primaryDark) 100%);
+  }
+}

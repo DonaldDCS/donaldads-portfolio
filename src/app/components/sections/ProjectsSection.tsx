@@ -41,7 +41,7 @@ export default function ProjectsSection({
   return (
     <section
       id="projects"
-      className="pb-14 px-6 md:px-12 lg:px-24 bg-gradient-to-r from-accentPrimary/70 via-primary/70 to-accentSecondary/70"
+      className="pb-14 px-6 md:px-12 lg:px-24 bg-oklch-primarytoaccent"
     >
       <div className="max-w-6xl mx-auto text-center">
         {/* Tag filters */}

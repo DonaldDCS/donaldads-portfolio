@@ -2,10 +2,12 @@
 
 import { linkMotion, staggerFadeInUp } from "@lib/motionVariants";
 import Animated from "@components/ui/Animated";
+import GradientHero from "../layout/GradientHero";
 
 export default function Hero() {
   return (
-    <section className="h-screen flex items-center justify-center bg-gradient animate-gradient">
+    <section className="h-screen flex items-center justify-center">
+      <GradientHero />
       <Animated
         variants={staggerFadeInUp.container}
         className="text-center px-4"

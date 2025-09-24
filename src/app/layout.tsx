@@ -5,7 +5,7 @@ import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 
 export const metadata: Metadata = {
-  title: "Donald ADS Portfolio",
+  title: "Donald Stooks' Portfolio",
   description: "The professional portfolio of Donald ADS",
 };
 
