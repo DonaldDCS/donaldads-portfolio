@@ -13,7 +13,7 @@ export default function Home() {
       <div id="projectSection" className="text-center py-14 px-6 md:px-12 lg:px-24 bg-oklch-primarytoaccent scroll-mt-18">
         <Animated
           as="h1"
-          className="text-4xl font-heading font-bold mb-8 text-primary"
+          className="text-4xl font-heading font-bold mb-8 text-primaryLight"
         >
           Featured Projects
         </Animated>

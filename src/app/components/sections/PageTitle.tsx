@@ -13,7 +13,7 @@ export default function PageTitle({ title, description, bgClass }: PageTitleProp
     <header className={`text-center py-14 px-6 md:px-12 lg:px-24 ${bgClass}`}>
       <Animated
         as="h1"
-        className="text-4xl font-heading font-bold mb-8 text-primary"
+        className="text-4xl font-heading font-bold mb-8 text-primaryLight"
       >
         {title}
       </Animated>

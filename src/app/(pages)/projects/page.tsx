@@ -1,5 +1,6 @@
 import ProjectsSection from "@components/sections/ProjectsSection";
 import PageTitle from "@components/sections/PageTitle";
+import ContactSection from "@/app/components/sections/ContactSection";
 
 export default function Projeccts() {
   return (
@@ -10,6 +11,7 @@ export default function Projeccts() {
         bgClass="bg-oklch-primarytoaccent"
       />
       <ProjectsSection canFilter />
+      <ContactSection />
     </>
   );
 }
